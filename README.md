@@ -1,29 +1,35 @@
-# Terraform
+Terraform basics
 
-Create an EC2 instance with Terraform
+Terraform provider — The cloud provider, where user will create the resource
+Plugins : Executable binary which talks to the provider
+State file : Keeps track of the current states of resources created via terraform
 
-Get Your AWS Access KEY ID Access Key from IAM section
+In .bashrc file — Enter your Secret keys
 
-Create an .tf File and write your code in it
+Source .bashrc
 
-provider "aws" {
-  profile = "default"
-  region = "Choose your region"
-}
+Terrafrom validate — Syntax check
 
-resource "aws instance" "app_server" { #Here I am creating an normal application server
-  ami = "Put the ami id here"
-  instance_type = "t2_micro"
-  
-  tags = {
-    Name = "Your EC2 Instance Name"
-  }
-}
+Terraform fmt —  indentation check 
 
-Now save the file in your favorite editor,I have used Vi editor 
+Terraform init — initialise the provider file
 
-now run aws configure command,it will ask your AWS Access KEY ID,Access Key and Default region
+Terrform plan — dry run of your script/resource creation file —file should be .tf suffix format
 
-Now Run terraform apply command---It will create your app server instance there
+Terraform apply — actual creation of resource 
 
-Go to your AWS consile and in EC2 Instance service,Check in the Instances section and you can find your newly created EC2 Instance with 1 CPU and1 GB storage
+Terrform show — Show the details of resources created
+
+Terrafrom show list - List of all the resources which has been created in that particular workspace
+
+Terraform show list resource_name — to see the details of particular resource
+
+Terrafrom destroy — To destroy/delete the resource created in the workspace
+
+Terrafrom destroy resource_name — To destroy/delete the particular resource created in that workspace
+
+Files created post terraform init
+
+.terraform
+.terraform_state -DB of the state of the resource created in the workspace
+.terrafrom_state_backup
