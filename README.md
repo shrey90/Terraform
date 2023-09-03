@@ -4,9 +4,15 @@ Terraform provider — The cloud provider, where user will create the resource
 Plugins : Executable binary which talks to the provider
 State file : Keeps track of the current states of resources created via terraform
 
-In .bashrc file — Enter your Secret keys
+In .bashrc file — Enter your Secret keys(Industry Standard)
 
-Source .bashrc
+
+
+# echo 'export CLOUD_USERNAME=username' | tee -a ~/.bashrc 
+# echo 'export CLOUD_PASSWORD=password' | tee -a ~/.bashrc 
+
+Then reload the profile to apply the new additions.
+# source ~/.bashrc (To reload the configuration changes done in .bashrc file(If you directly export than changes will be available only for the current session)
 
 Terrafrom validate — Syntax check
 
