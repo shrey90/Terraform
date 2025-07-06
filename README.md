@@ -39,3 +39,5 @@ Files created post terraform init
 .terraform
 .terraform_state -DB of the state of the resource created in the workspace
 .terrafrom_state_backup
+
+Terraform lock file will lock the current version of terrafrom and going forward only this version will be used to create/provision the resources
