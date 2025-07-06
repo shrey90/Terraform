@@ -1,1 +1,7 @@
+resource "aws_instance" "tf_ec2" {
+  ami                    = "ami-0c55b1d476500f146" 
+  instance_type          = "t2.micro"
+  key_name               = aws_key_pair.deployer.key_name   (your key generate throgh ssh-keygen file)
+  vpc_security_group_ids = [aws_security_group.instance_sg.id] (SG which yiu have created in sg.tf file)
+  }
 
